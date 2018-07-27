@@ -9,6 +9,7 @@ const Gallery = require('./models/Gallery')
 const Shop = require('./models/Shop')
 const Cart = require('./models/Cart')
 const Detail = require('./models/Detail')
+const Create = require('./models/Create')
 
 mongoose.connect('mongodb://localhost:27017/legacyapp')
 mongoose.Promise = global.Promise
@@ -23,6 +24,32 @@ app.use((req, res, next) => {
     'Origin, X-Requested-With, Content-Type, Accept'
   )
   next()
+})
+
+//CREATE NEW USER INFO ABOUT DECEASED
+app.post('/upload', (req, res) => {
+  let newInfo = req.body
+  let newProfile = new Create({
+    first: newInfo.first,
+    last: newInfo.last,
+    birth: newInfo.birth,
+    death: newInfo.death,
+    cause: newInfo.cause,
+    funeral: newInfo.funeral,
+    biography: newInfo.biography,
+    pic: newInfo.pic,
+    phone: newInfo.phone,
+    email: newInfo.email
+  })
+  newProfile.save()
+  Create.find({})
+    .then(results => {
+      res.send(results)
+    })
+  .catch(err => {
+    console.log(err)
+    res.status(400).json({err})
+  })
 })
   
 //UPDATE SHOP
