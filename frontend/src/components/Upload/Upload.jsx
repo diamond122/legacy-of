@@ -115,15 +115,19 @@ class Upload extends Component {
               </p>
             </form>
             <form className='input-field col s8'>
-            <input id="phone" type="text" className="validate" />
-                <label htmlFor="phone">Phone Number</label>
-                <br />
-                <br />
-            <input id="email" type="email" className="validate" />
-                <label htmlFor="email"><br/><br/>Email Address</label>
+              <input id="phone" type="text" className="validate" />
+              <label htmlFor="phone">Phone Number</label>
+              <br />
+              <br />
+              <input id="email" type="email" className="validate" />
+              <label htmlFor="email"><br /><br />Email Address</label>
             </form>
           </div>
         </div>
+        <button className="btn waves-effect waves-light" type="submit" name="action">Submit
+          <i className="material-icons right">send</i>
+        </button>
+
       </div>
     )
   }
