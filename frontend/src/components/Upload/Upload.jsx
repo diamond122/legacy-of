@@ -1,6 +1,28 @@
 import React, { Component } from 'react'
+import axios from 'axios'
+// import './upload.css'
 
 class Upload extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      info: []
+    }
+  }
+
+  submit = userInfo => {
+    axios
+      .post('http:localhost:5050/upload', userInfo)
+      .then(response => {
+        console.log(response.data)
+        this.setState({
+          info: response.data
+        })
+      })
+      .catch(error => {
+        console.log(error)
+      })
+  }
 
   render() {
     return (
