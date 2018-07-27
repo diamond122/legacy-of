@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="theme-color" content="#000000">
+
+  <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
+  <link rel="shortcut icon" href="http://media.inktastic.com/thumbnail/844/444/115/115444844.1.png">
+
+  <script type="text/javascript" src='https://maps.googleapis.com/maps/api/js?key=AIzaSyCuHLfANHztaboVxc1L8OV9MIKG8sMjDDc&libraries=places'></script>
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+  <script type="text/javascript" src="js/materialize.min.js"></script>
+  <!-- <script> -->
+
+  <!--Compiled and minified JavaScript-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+
+  <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
+
+  <script src='../node_modules/react-typist/dist/Typist.js'>
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet">
+
+  <title>Legacy</title>
+</head>
+
+<body>
+  <noscript>
+    You need to enable JavaScript to run this app.
+  </noscript>
+  <div id="root"></div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      let elems = document.querySelectorAll('.dropdown-trigger');
+      let instances = M.Dropdown.init(elems, options);
+    });
+
+    $('.dropdown-button').dropdown({
+      inDuration: 300,
+      outDuration: 225,
+      constrain_width: true,
+      hover: false,
+      gutter: 0,
+      belowOrigin: false
+    }
+    );
+
+    M.AutoInit();
+
+    $(document).ready(function () {
+      $('.datepicker').datepicker();
+    });
+
+    $(document).ready(function () {
+      $('input#input_text, textarea#textarea2').characterCounter();
+    });
+
+  </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,64 @@
+div #site {
+  font-family: serif;
+  font-size: 3rem;
+  position: absolute;
+  top: 20%;
+  left: 10%;
+  right: 5%;
+  width: 100%;
+  display: block;
+  text-shadow: 2px 2px #7a7a7a;
+  z-index: 1; }
+
+div #create {
+  font-family: 'Rubik', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  position: absolute;
+  display: inline-block;
+  align-content: right;
+  left: 45%;
+  top: 45%;
+  z-index: 1; }
+
+div #demo {
+  font-family: 'Rubik', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  position: absolute;
+  display: inline-block;
+  align-content: right;
+  color: white !important;
+  background-color: #00ACC2 !important;
+  left: 65%;
+  top: 45%;
+  z-index: 1; }
+
+div img {
+  display: fixed;
+  align-content: center;
+  width: 100vw; }
+
+div .card-img {
+  padding-top: 8%;
+  padding-left: 5%; }
+
+div .text {
+  font-family: 'Rubik', sans-serif;
+  display: inline-block;
+  font-size: .7rem; }
+
+div .title {
+  font-family: 'Rubik', sans-serif;
+  display: block;
+  font-weight: 700;
+  font-size: 1.1rem; }
+
+div #blurb {
+  padding-top: 15%;
+  padding-bottom: 15%; }
+
+div h5 {
+  font-style: italic;
+  font-size: 2.3rem;
+  font-family: georgia, serif; }

@@ -1,0 +1,13 @@
+#bar {
+  padding-left: 5%;
+  padding-right: 5%;
+  align-content: center; }
+
+nav .navText {
+  font-family: 'Rubik', sans-serif;
+  font-size: 1rem; }
+
+nav #logo {
+  font-family: 'Rubik', sans-serif;
+  font-size: 1.4rem;
+  text-shadow: 1px 1px #7a7a7a; }

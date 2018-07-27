@@ -1,0 +1,25 @@
+.active, .accordion:hover {
+  background-color: #1e88e5; }
+
+.panel {
+  padding: 0 18px;
+  background-color: white;
+  display: none;
+  overflow: hidden; }
+
+.accordion:after {
+  content: 'CART';
+  font-size: 13px;
+  color: white;
+  float: right;
+  margin-left: 5px; }
+
+.active:after {
+  content: "CART"; }
+
+.accordian-text {
+  margin: 0; }
+
+#cart {
+  height: 30%;
+  width: 40%; }
