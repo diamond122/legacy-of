@@ -10,13 +10,20 @@ class Upload extends Component {
     }
   }
 
-  submit = userInfo => {
+  submit = e => {
+    e.preventDefault()
+    console.log(e)
     axios
-      .post('http:localhost:5050/upload', userInfo)
+      .post('http:localhost:5050/upload', e)
       .then(response => {
-        console.log(response.data)
+        let newInfo = {
+          first: response.data
+        }
+        let tempInfo = this.state.info
+        tempInfo.push(newInfo)
+        console.log(newInfo)
         this.setState({
-          info: response.data
+          info: tempInfo
         })
       })
       .catch(error => {
@@ -35,11 +42,11 @@ class Upload extends Component {
         </div>
 
         <div className="row">
-          <form className="col s12">
+          <form onSubmit={() => { this.submit(this.refs.text.value) }} className="col s12">
             <div className="row">
               <div className="input-field col s6">
-                <input id="first_name" type="text" className="validate" />
-                <label htmlFor="last_name">First Name</label>
+                <input ref='text' name='text' id="first_name" type="text" className="validate" />
+                <label htmlFor="first_name">First Name</label>
               </div>
               <div className="input-field col s6">
                 <input id="last_name" type="text" className="validate" />
@@ -78,55 +85,12 @@ class Upload extends Component {
                 <label htmlFor="biography">Biography</label>
               </div>
             </div>
+            <button className="btn waves-effect waves-light" type="submit" name="action">Submit
+              <i className="material-icons right">send</i>
+            </button>
           </form>
 
-          <form action="#">
-            <div className="file-field input-field">
-              <div className="btn">
-                <span>File</span>
-                <input type="file" multiple />
-              </div>
-              <div className="file-path-wrapper">
-                <input className="file-path validate" type="text" placeholder="Upload one or more files" />
-              </div>
-            </div>
-          </form>
-
-          <div className='row'>
-            <form className='col s4' action="#">
-              <p>How may we contact you?</p>
-              <p>
-                <label>
-                  <input name="group1" type="radio" checked />
-                  <span>Phone</span>
-                </label>
-              </p>
-              <p>
-                <label>
-                  <input name="group1" type="radio" />
-                  <span>Email</span>
-                </label>
-              </p>
-              <p>
-                <label>
-                  <input name="group1" type="radio" />
-                  <span>Both</span>
-                </label>
-              </p>
-            </form>
-            <form className='input-field col s8'>
-              <input id="phone" type="text" className="validate" />
-              <label htmlFor="phone">Phone Number</label>
-              <br />
-              <br />
-              <input id="email" type="email" className="validate" />
-              <label htmlFor="email"><br /><br />Email Address</label>
-            </form>
-          </div>
         </div>
-        <button className="btn waves-effect waves-light" type="submit" name="action">Submit
-          <i className="material-icons right">send</i>
-        </button>
 
       </div>
     )
